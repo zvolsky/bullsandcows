@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+# Bulls and Cows terminal game, Py 2.7
 # github.com/zvolsky/bullsandcows
 
 import random
@@ -48,4 +49,7 @@ def play():
 
 
 if __name__ == "__main__":
-    play()
+    try:
+        play()
+    except KeyboardInterrupt:
+        print
