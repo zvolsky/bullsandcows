@@ -6,10 +6,16 @@
 import random
 
 
-def play():
+def play(duplicates=False):
     multi = lambda point, e=False: '' if point == 1 else (('e' if e else '') + 's')
 
-    secret = str(10000 + random.randint(0,9999))[-4:]
+    choices = [char for char in '9876543210']
+    secret = ''
+    for i in xrange(4):
+        next = random.choice(choices)
+        secret += next
+        if not duplicates:
+            choices.remove(next)
 
     print '''
     Hi there!
